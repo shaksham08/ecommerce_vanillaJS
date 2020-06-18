@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/auth.css">
+  <title>SIgnUp</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>sign Up</h1>
+
+    <form method="POST">
+      <div class="form-group">
+        <label for="inputEmail">Email address</label>
+        <input name="email" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+        <% if(errormsg && errormsg.email){ %>
+
+        <div class="alert alert-danger" role="alert">
+          <%= errormsg.email %>
+        </div>
+        <% } %>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input name="password" type="password" class="form-control" id="inputPassword">
+        <% if(errormsg && errormsg.password){ %>
+
+        <div class="alert alert-danger" role="alert">
+          <%= errormsg.password %>
+        </div>
+        <% } %>
+      </div>
+      <div class="form-group">
+        <label for="inputPasswordConfirmation">Re Enter Password</label>
+        <input name="passwordConfirmation" name="password" type="password" class="form-control"
+          id="inputPasswordConfirmation">
+        <% if(errormsg && errormsg.passwordConfirmation){ %>
+
+        <div class="alert alert-danger" role="alert">
+          <%= errormsg.passwordConfirmation %>
+        </div>
+        <% } %>
+      </div>
+
+      <button type="submit" class="btn btn-primary">SignUp</button>
+
+      <p class="need">Already Have an account <a href="/signin">SignIn</a> </p>
+
+  </div>
+</body>
+
+</html>
