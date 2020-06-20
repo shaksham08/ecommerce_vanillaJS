@@ -1,21 +1,21 @@
-body,html{
-    margin: 0;
-    padding: 0;
-
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-form{
-    width: 60%;
-    margin: 30px auto;
+form {
+  width: 60%;
+  margin: 30px auto;
 }
-.alert{
-    margin-top: 20px;
+.alert {
+  margin-top: 20px;
 }
 
-.need{
-    margin-top: 20px;
+.need {
+  margin-top: 20px;
 }

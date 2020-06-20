@@ -41,15 +41,23 @@ module.exports = {
     .custom(async (password, { req }) => {
       const existingUser = await userRepo.getOneBy({ email: req.body.email });
       if (!existingUser) {
-        throw new Error("Invalid Password")
+        throw new Error("Invalid Password");
       }
       const validPassword = await userRepo.comparePassword(
         existingUser.password,
         password
       );
       if (!validPassword) {
-        throw new Error("Invalid Password")
+        throw new Error("Invalid Password");
       }
-    })
-
+    }),
+  requireTitle: check("title")
+    .trim()
+    .isLength({ min: 5, max: 40 })
+    .withMessage("Must Be between 5 and 40 characters"),
+  requirePrice: check("price")
+    .trim()
+    .toFloat()
+    .isFloat({ min: 1 })
+    .withMessage("Must be a valid price"),
 };
