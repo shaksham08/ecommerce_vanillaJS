@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <title>Products</title>
+
+    <style>
+        .head {
+            margin-top: 25px;
+        }
+
+        .new {
+            height: 35px;
+            text-align: center;
+            padding: 5px 5px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between head">
+
+            <h1>Products</h1>
+            <a href="/admin/products/new" class="btn btn-success new">Add product</a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col ">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% products.forEach(function(product){ %>
+                <tr>
+                    <th scope="row"><%= product.title %></th>
+                    <td><%= product.price %></td>
+                    <td>
+                        <form action="/admin/products/<%= product.id %>/delete?_method=DELETE" method="POST">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                    <td><a href="/admin/products/<%=product.id%>/edit" class="btn btn-warning">Edit</a></td>
+
+                    <%}) %>
+
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/css/auth.css" />
+  <title>Product</title>
+</head>
+
+<body>
+  <div>
+    <div class="container">
+      <h1>Admin Panel</h1>
+      <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input name="title" type="text" class="form-control" id="title" />
+          <% if(errormsg && errormsg.title){ %>
+          <small id="emailHelp" class="form-text text-danger"><%= errormsg.title %></small>
+
+          <% } %>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input name="price" type="text" class="form-control" id="price" />
+          <% if(errormsg && errormsg.price){ %>
+          <small id="emailHelp" class="form-text text-danger"><%= errormsg.price %></small>
+
+          <% } %>
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input name="image" type="file" class="form-control-file" id="image" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Create</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
